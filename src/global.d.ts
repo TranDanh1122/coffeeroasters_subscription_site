@@ -8,5 +8,12 @@ declare global {
         desc: string,
         btnText?: string
     }
+    interface CardWIcon {
+        thumbnail: string,
+        title: string,
+        desc: string,
+        textColor: string,
+        bgColor?: string
+    }
 }
 export { }

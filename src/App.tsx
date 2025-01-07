@@ -1,6 +1,7 @@
 import "./styles.css"
 import Layout from "./partials/Layout"
 import Hero from "./components/Hero"
+import CardwIcon from "./components/CardwIcon"
 const heroData: HeroSection = {
   bgImage: "./assets/home/desktop/image-hero-coffeepress.jpg",
   bgImageMobile: "./assets/home/mobile/image-hero-coffeepress.jpg",
@@ -10,11 +11,19 @@ const heroData: HeroSection = {
   desc: "Start your mornings with the world’s best coffees. Try our expertly curated artisan coffees from our best roasters delivered directly to your door, at your schedule.",
   btnText: "Create your plan"
 }
-const collectionData: { thumbnail: string, title: string, desc: string }[] = [
-  { thumbnail: "./assets/home/desktop/image-gran-espresso.png", title: "Gran Espresso", desc: "Light and flavorful blend with cocoa and black pepper for an intense experience" },
-  { thumbnail: "./assets/home/desktop/image-planalto.png", title: "Planalto", desc: "Brazilian dark roast with rich and velvety body, and hints of fruits and nuts" },
-  { thumbnail: "./assets/home/desktop/image-piccollo.png", title: "Piccollo", desc: "Mild and smooth blend featuring notes of toasted almond and dried cherry" },
-  { thumbnail: "./assets/home/desktop/image-danche.png", title: "Danche", desc: "Ethiopian hand-harvested blend densely packed with vibrant fruit notes" },
+
+const collectionData: CardWIcon[] = [
+  { thumbnail: "./assets/home/desktop/image-gran-espresso.png", title: "Gran Espresso", desc: "Light and flavorful blend with cocoa and black pepper for an intense experience", textColor: "#333D4B" },
+  { thumbnail: "./assets/home/desktop/image-planalto.png", title: "Planalto", desc: "Brazilian dark roast with rich and velvety body, and hints of fruits and nuts", textColor: "#333D4B" },
+  { thumbnail: "./assets/home/desktop/image-piccollo.png", title: "Piccollo", desc: "Mild and smooth blend featuring notes of toasted almond and dried cherry", textColor: "#333D4B" },
+  { thumbnail: "./assets/home/desktop/image-danche.png", title: "Danche", desc: "Ethiopian hand-harvested blend densely packed with vibrant fruit notes", textColor: "#333D4B" },
+
+]
+const chooseUsData: CardWIcon[] = [
+  { thumbnail: "./assets/home/desktop/icon-coffee-bean.svg", title: "Best quality", desc: "Discover an endless variety of the world’s best artisan coffee from each of our roasters.", textColor: "#FEFCF7", bgColor: "#0E8784" },
+  { thumbnail: "./assets/home/desktop/icon-gift.svg", title: "Exclusive benefits", desc: "Special offers and swag when you subscribe, including 30% off your first shipment.", textColor: "#FEFCF7", bgColor: "#0E8784" },
+  { thumbnail: "./assets/home/desktop/icon-truck.svg", title: "Free shipping", desc: "We cover the cost and coffee is delivered fast. Peak freshness: guaranteed.", textColor: "#FEFCF7", bgColor: "#0E8784" },
+
 
 ]
 function App() {
@@ -29,20 +38,27 @@ function App() {
         </h2>
         <div className="flex justify-center items-center relative z-10 gap-8 tb:flex-col mb:flex-col">
           {
-            collectionData.map((el: { thumbnail: string, title: string, desc: string }) =>
-              <div className="flex tb:gap-9 gap-[4.5rem] mb:gap-6  tb:items-center tb:flex-row flex-col">
-                <img src={el.thumbnail} alt={el.title} className="w-[calc(16rem-1.5rem)] mb:w-[12.5rem] h-[12.5rem] mb:h-[10rem] object-cover aspect-auto mx-auto" />
-                <div className="flex flex-col gap-6 mb:gap-4">
-                  <h3 className="text-[1.5rem] text-center tb:text-left text-[#333D4B] font-black font-fra">{el.title}</h3>
-                  <p className="text-[#333D4B] text-center tb:text-left leading-6">
-                    {el.desc}
-                  </p>
-                </div>
-
-              </div>)
+            collectionData.map((el: CardWIcon, index) => <CardwIcon key={index} type="collection" card={el} />)
           }
 
         </div>
+      </section>
+
+      <section className="container mb:max-w-none py-40 relative flex gap-[5.25rem] flex-col ">
+        <div>
+          <h2 className="font-black font-fra text-[2.5rem] leading-[3rem] text-[#FEFCF7] text-center mb-8">Why choose us?</h2>
+          <p className="text-barlow leading-6 text-[#FEFCF7] text-opacity-80 w-1/2 tb:w-4/5 mx-auto text-center">A large part of our role is choosing which particular coffees will be featured
+            in our range. This means working closely with the best coffee growers to give
+            you a more impactful experience on every level.</p>
+        </div>
+
+        <div className=" flex gap-5 flex-nowrap tb:flex-col mb:flex-col ">
+          {
+            chooseUsData.map((el: CardWIcon, index: number) => <CardwIcon key={index} card={el} type="choose" />)
+          }
+        </div>
+        <div className="bg-[#2C343E] rounded-xl w-full h-[60%] top-0 left-0 absolute -z-10"></div>
+
       </section>
     </Layout>
   </>)
