@@ -15,5 +15,10 @@ declare global {
         textColor: string,
         bgColor?: string
     }
+    interface StepCard {
+        id: string
+        title: string,
+        desc: string,
+    }
 }
 export { }
