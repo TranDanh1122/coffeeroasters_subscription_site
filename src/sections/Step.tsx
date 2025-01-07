@@ -12,7 +12,7 @@ export default function Step({ theme }: { theme: string }): React.JSX.Element {
         <div>
             <h2 className={clsx("text-[1.5rem] font-black font-fra mb:text-center", {
                 "text-[#83888F]": theme == "light",
-                "hidden": theme != "light",
+                "hidden ": theme != "light",
 
             })}>How it works</h2>
             <div className=" w-full mt-24 border-t-2 border-solid mb:border-none border-t-[#FDD6BA]">
@@ -21,7 +21,7 @@ export default function Step({ theme }: { theme: string }): React.JSX.Element {
 
             <div className="flex justify-between gap-24 items-stretch mb:flex-col">
                 {
-                    cardData.map((el: StepCard, index: number) => <StepCard key={index} theme="light" data={el} />)
+                    cardData.map((el: StepCard, index: number) => <StepCard key={index} theme={theme} data={el} />)
                 }
 
             </div>

@@ -8,7 +8,7 @@ export default function StepCard({ data, theme }: { data: StepCard, theme: strin
             })} ></div>
 
             <span className={clsx("font-black font-fra text-[4.5rem] mt-[2.5rem] mb:mt-0 mb:text-center", {
-                "text-[#FDD6BA]": theme == "light"
+                "text-[#FDD6BA]": theme == "light" || theme == "dark"
             })}>{data.id}</span>
             <h3 className={clsx("font-black font-fra text-[1.75rem] leading-8 mb:my-6 mb:text-center", {
                 "text-[#333D4B]": theme == "light",
