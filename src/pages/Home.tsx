@@ -16,14 +16,11 @@ const collectionData: CardWIcon[] = [
     { thumbnail: "./assets/home/desktop/image-planalto.png", title: "Planalto", desc: "Brazilian dark roast with rich and velvety body, and hints of fruits and nuts", textColor: "#333D4B" },
     { thumbnail: "./assets/home/desktop/image-piccollo.png", title: "Piccollo", desc: "Mild and smooth blend featuring notes of toasted almond and dried cherry", textColor: "#333D4B" },
     { thumbnail: "./assets/home/desktop/image-danche.png", title: "Danche", desc: "Ethiopian hand-harvested blend densely packed with vibrant fruit notes", textColor: "#333D4B" },
-
 ]
 const chooseUsData: CardWIcon[] = [
     { thumbnail: "./assets/home/desktop/icon-coffee-bean.svg", title: "Best quality", desc: "Discover an endless variety of the world’s best artisan coffee from each of our roasters.", textColor: "#FEFCF7", bgColor: "#0E8784" },
     { thumbnail: "./assets/home/desktop/icon-gift.svg", title: "Exclusive benefits", desc: "Special offers and swag when you subscribe, including 30% off your first shipment.", textColor: "#FEFCF7", bgColor: "#0E8784" },
     { thumbnail: "./assets/home/desktop/icon-truck.svg", title: "Free shipping", desc: "We cover the cost and coffee is delivered fast. Peak freshness: guaranteed.", textColor: "#FEFCF7", bgColor: "#0E8784" },
-
-
 ]
 export default function Home(): React.JSX.Element {
     return (

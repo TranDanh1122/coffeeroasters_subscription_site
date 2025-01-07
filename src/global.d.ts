@@ -20,5 +20,10 @@ declare global {
         title: string,
         desc: string,
     }
+    interface AboutSection {
+        img: string,
+        title: string,
+        desc: string,
+    }
 }
 export { }
