@@ -97,7 +97,7 @@ export default function Subscribe(): React.JSX.Element {
             if (idx === updateItemIndex) return { ...plan, items: updatedItems };
             return plan;
         });
-        const result = updatedState.map((plan, idx) => {
+        const result = updatedState.map((plan) => {
             const isCapsule = updatedState[0].items.find(el => el.status == "selected")?.title == "Capsule"
             if (plan.id == "4" && isCapsule) return { ...plan, status: "disable" as "disable", items: plan.items.map(el => ({ ...el, status: "default" as "default" })) }
 
@@ -117,7 +117,7 @@ export default function Subscribe(): React.JSX.Element {
 
     React.useEffect(() => {
         let result = ""
-        let price = ""
+        let price = 0
         let weight: { [key: string]: number } = {}
         state.map((el, index) => {
             const selectedItem = el.items.find(e => e.status == "selected")
@@ -144,7 +144,7 @@ export default function Subscribe(): React.JSX.Element {
         setResultText(result)
         console.log(price);
         
-        setPrice(!isNaN(price) ? price as number : 0)
+        setPrice(!isNaN(price) ? price : 0)
     }, [state])
 
     return (<>

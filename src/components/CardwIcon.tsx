@@ -18,7 +18,9 @@ export default function CardwIcon({ card, type }: { card: CardWIcon, type: strin
             })} />
             <div>
                 <h3 className="text-[1.5rem]  font-black font-fra leading-8 mb-6 text-center tb:text-left" style={{ color: `${card.textColor}` }}>{card.title}</h3>
-                <p className={`text-barlow leading-6 text-center tb:text-left`} style={{ color: `${card.textColor}`, whiteSpace: "pre-line", textAlign: `${type == "headquarter" ? "left" : ""}` }}>{card.desc}</p>
+                <p className={clsx(`text-barlow leading-6 text-center tb:text-left`, {
+                    "text-left": type == "headquarter"
+                })} style={{ color: `${card.textColor}`, whiteSpace: "pre-line" }}>{card.desc}</p>
             </div>
         </div>)
 }
