@@ -8,8 +8,8 @@ interface AboutSection {
 export default function About({ data, theme }: { data: AboutSection, theme: string }): React.JSX.Element {
     return (
         <section className={clsx("container mb:max-w-none flex justify-between gap-32 tb:gap-16 items-center relative", {
-            " flex-row py-40 mb:flex-col": theme == "light",
-            "flex-row-reverse tb:flex-col mb:flex-col  ": theme != "light",
+            "flex-row py-40 mb:flex-col": theme == "light",
+            "flex-row-reverse tb:flex-col mb:flex-col": theme != "light",
         })}>
             <img src={data.img} alt={data.title} className={clsx(`objec-cover aspect-auto w-[450px] rounded-md`, {
                 "h-[520px] w-[450px] tb:w-[280px]": theme == "light",
