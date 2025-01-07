@@ -2,7 +2,7 @@ import React from "react";
 export default function Footer(): React.JSX.Element {
     return (
         <footer className="container mb:max-w-none bg-[#2C343E] w-full flex items-center justify-start p-12 rounded-lg tb:flex-col tb:justify-center tb:gap-8 mb:flex-col mb:justify-center mb:items-center mb:gap-6 ">
-            <img src="./assets/shared/desktop/logo-footer.svg" alt="logo" className="w-[16rem] h-7 object-cover" style={{ aspectRatio: "236/26" }} />
+            <img src="./assets/shared/desktop/logo-footer.svg" alt="logo" className="w-[16rem] h-7 object-cover mb:w-full" style={{ aspectRatio: "236/26" }} />
             <ul className="flex mb:flex-col flex-nowrap justify-start items-center gap-8 ml-[6.5rem] tb:ml-0 mb:ml-0 uppercase  ">
                 <li className=" font-bold font-barlow text-[.75rem] leading-[1rem] tracking-[.92px] text-[#83888F] hover:text-[#FEFCF7]">
                     <a href="#">Home</a>

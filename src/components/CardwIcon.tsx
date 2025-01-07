@@ -2,12 +2,15 @@ import React from "react";
 import clsx from "clsx";
 export default function CardwIcon({ card, type }: { card: CardWIcon, type: string }): React.JSX.Element {
     return (
-        <div className="p-[3rem] pt-[4.5rem] rounded-xl flex flex-col justify-center items-center gap-16 tb:flex-row tb:gap-14 tb:items-center"
-            style={{ backgroundColor: `${card.bgColor}`, alignItems:`${type == "headquarter" ? "start" : ""}`  }}>
+        <div className={clsx("p-[3rem] pt-[4.5rem] rounded-xl flex flex-col justify-center items-center gap-16 tb:flex-row tb:gap-14 tb:items-center", {
+            "tb:flex-row": type != "headquarter",
+            "tb:flex-col": type == "headquarter",
+        })}
+            style={{ backgroundColor: `${card.bgColor}`, alignItems: `${type == "headquarter" ? (window.innerWidth > 767 ? "start" : "center") : ""}` }}>
 
             <img src={card.thumbnail} alt={card.title} className={clsx("w-[4.5rem] tb:w-[3.5rem] h-[4.5rem] tb:h-[3.5rem] aspect-square object-cover", {
                 "hidden": type == "collection",
-                "block": type != "collection"
+                "block mx-auto": type != "collection"
             })} />
             <img src={card.thumbnail} alt={card.title} className={clsx("w-[calc(16rem-1.5rem)] mb:w-[12.5rem] h-[12.5rem] mb:h-[10rem] object-cover aspect-auto", {
                 "hidden": type != "collection",

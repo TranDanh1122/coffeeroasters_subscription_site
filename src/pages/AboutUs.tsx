@@ -33,7 +33,7 @@ export default function AboutUs(): React.JSX.Element {
             <About data={aboutDarkData} theme="dark"></About>
             <section className="container mb:max-w-none py-40">
                 <h2 className="font-black font-fra text-[#83888F] text-[1.5rem] leading-8">Our headquarters</h2>
-                <div className=" flex flex-nowrap tb:flex-col mb:flex-col justify-start gap-24">
+                <div className=" flex flex-nowrap tb:flex-row mb:flex-col justify-start gap-24 mb:gap-4">
 
                     {
                         headquarters.map((headquarter: CardWIcon, index: number) => <CardwIcon key={index} card={headquarter} type="headquarter" />)
